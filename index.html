@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TradeLink - Tra Cứu Thông Minh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              slate: {
+                850: '#1e293b',
+                900: '#0f172a',
+                950: '#020617',
+              },
+              // New Brand Colors
+              brand: {
+                50: '#ecfeff',
+                100: '#cffafe',
+                200: '#a5f3fc',
+                300: '#67e8f9',
+                400: '#22d3ee',
+                500: '#06b6d4',
+                600: '#0891b2',
+                700: '#0e7490', // Main Brand Color
+                800: '#155e75',
+                900: '#164e63',
+              },
+              accent: {
+                500: '#6366f1', // Indigo for depth
+                600: '#4f46e5',
+              }
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'float-delayed': 'float 6s ease-in-out 3s infinite',
+              'blob': 'blob 7s infinite',
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'shimmer': 'shimmer 2s linear infinite',
+              'gentle-shake': 'gentleShake 0.5s ease-in-out',
+              'slide-in-right': 'slideInRight 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+              'glow': 'glow 2s ease-in-out infinite alternate',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translate3d(0, 0, 0)' },
+                '50%': { transform: 'translate3d(0, -20px, 0)' },
+              },
+              blob: {
+                '0%': { transform: 'translate3d(0px, 0px, 0) scale(1)' },
+                '33%': { transform: 'translate3d(30px, -50px, 0) scale(1.1)' },
+                '66%': { transform: 'translate3d(-20px, 20px, 0) scale(0.9)' },
+                '100%': { transform: 'translate3d(0px, 0px, 0) scale(1)' },
+              },
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translate3d(0, 20px, 0)' },
+                '100%': { opacity: '1', transform: 'translate3d(0, 0, 0)' },
+              },
+              shimmer: {
+                '0%': { transform: 'translateX(-100%)' },
+                '100%': { transform: 'translateX(100%)' },
+              },
+              gentleShake: {
+                '0%, 100%': { transform: 'rotate(0deg)' },
+                '25%': { transform: 'rotate(-5deg)' },
+                '75%': { transform: 'rotate(5deg)' },
+              },
+              slideInRight: {
+                '0%': { transform: 'translate3d(100%, 0, 0)', opacity: '0' },
+                '100%': { transform: 'translate3d(0, 0, 0)', opacity: '1' },
+              },
+              glow: {
+                'from': { boxShadow: '0 0 5px -1px rgba(6, 182, 212, 0.2)' },
+                'to': { boxShadow: '0 0 15px -1px rgba(6, 182, 212, 0.5)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
+      .dark .glass-panel {
+        background: rgba(15, 23, 42, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .dark ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      .dark ::-webkit-scrollbar-track {
+        background: #0f172a; 
+      }
+      .dark ::-webkit-scrollbar-thumb {
+        background: #334155; 
+        border-radius: 10px;
+      }
+      .dark ::-webkit-scrollbar-thumb:hover {
+        background: #475569; 
+      }
+      /* Performance hint class */
+      .will-change-transform {
+        will-change: transform;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "xlsx": "https://esm.sh/xlsx@^0.18.5",
+    "@google/genai": "https://esm.sh/@google/genai@^1.37.0",
+    "idb": "https://esm.sh/idb@8.0.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 antialiased transition-colors duration-300 selection:bg-brand-500 selection:text-white">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
